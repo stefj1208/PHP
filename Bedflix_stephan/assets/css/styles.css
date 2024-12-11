@@ -1,0 +1,109 @@
+/* Navbar globale */
+.navbar {
+    background-color: #141414;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #e50914;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-username {
+    font-size: 14px;
+    color: white;
+}
+
+.logout-link {
+    font-size: 14px;
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.logout-link:hover {
+    color: white;
+}
+
+/* Featured Section */
+.featured {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.featured-img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.featured h2, .featured h3 {
+    color: #e50914;
+}
+
+/* Carousel Section */
+.carousel {
+    margin: 20px 0;
+}
+
+.carousel-items {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 150px;
+    text-align: center;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
