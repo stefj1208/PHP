@@ -25,10 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Vérifie si la requête HTTP uti
     $stmt->execute(); // Exécute la requête préparée.
     $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupère les données de l'utilisateur en tant que tableau associatif.
 
-    if ($user && $password === $user['mot_de_passe_utilisateur']) { 
-        // Vérifie que l'utilisateur existe et que le mot de passe soumis correspond à celui dans la base de données.
-        
-        // Créer une session utilisateur
+    // Vérifier si le mot de passe correspond au hash stocké
+    if ($user && password_verify($password, $user['mot_de_passe_utilisateur'])) {
+        // Si le mot de passe est valide, créer une session utilisateur
         $_SESSION['user_id'] = $user['id_utilisateur']; // Stocke l'ID de l'utilisateur dans la session.
         $_SESSION['user_name'] = $user['pseudo_utilisateur']; // Stocke le pseudonyme de l'utilisateur dans la session.
         $_SESSION['user_role'] = $user['id_role']; // Stocke le rôle de l'utilisateur dans la session.
