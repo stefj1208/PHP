@@ -1,6 +1,6 @@
 <?php
 // Inclure la connexion à la base de données
-include '../includes/connect.php'; // Inclut le fichier de connexion à la base de données, permettant d'accéder à l'objet PDO $db.
+include '../Models/connect.php'; // Inclut le fichier de connexion à la base de données, permettant d'accéder à l'objet PDO $db.
 
 // Initialiser une variable pour gérer les erreurs
 $error = null; // Définit une variable pour stocker un message d'erreur en cas de problème avec l'email.
