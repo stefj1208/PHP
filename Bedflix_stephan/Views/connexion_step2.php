@@ -1,6 +1,6 @@
 <?php
 // Inclure la connexion à la base de données
-include '../includes/connect.php'; // Inclut le fichier de connexion à la base de données pour accéder à l'objet PDO $db.
+include '../Models/connect.php'; // Inclut le fichier de connexion à la base de données pour accéder à l'objet PDO $db.
 
 // Vérifier si l'email est en session
 session_start(); // Démarre une session PHP pour accéder aux données de session.

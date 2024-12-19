@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Redirect to login if the user is not logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../pages/connexion.php');
+    header('Location: index.php?page=connexion');
     exit();
 }
 ?>
@@ -15,27 +15,29 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/styles.css"> <!-- Path to your CSS file -->
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Path to your CSS file -->
     <title>Bedflix</title>
 </head>
 <body>
 <nav class="navbar">
     <div class="navbar-container">
         <!-- Logo -->
-        <a href="home.php" class="navbar-logo">BEDFLIX</a>
+        <a href="index.php?page=home" class="navbar-logo">BEDFLIX</a>
         
         <!-- Links -->
         <ul class="navbar-links">
-            <li><a href="home.php">Accueil</a></li>
-            <li><a href="series.php">Séries</a></li>
-            <li><a href="movies.php">Films</a></li>
-            <li><a href="profile.php">Profil</a></li>
+            <li><a href="index.php?page=home">Accueil</a></li>
+            <li><a href="index.php?page=series">Séries</a></li>
+            <li><a href="index.php?page=movies">Films</a></li>
+            <li><a href="index.php?page=profile">Profil</a></li>
         </ul>
 
         <!-- User options -->
         <div class="navbar-user">
-            <span class="navbar-username"><?= htmlspecialchars($_SESSION['user_name']) ?></span>
-            <a href="../pages/logout.php" class="logout-link">Déconnexion</a>
+            <span class="navbar-username">
+                <?= htmlspecialchars($_SESSION['user_name'] ?? 'Utilisateur') ?>
+            </span>
+            <a href="index.php?page=logout" class="logout-link">Déconnexion</a>
         </div>
     </div>
 </nav>
